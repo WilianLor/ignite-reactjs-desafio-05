@@ -1,1 +1,35 @@
-// TODO
+.pageContainer {
+  width: 100%;
+  height: calc(100vh - 8rem);
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  gap: 1.25rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    color: var(--gray-600);
+
+    h4 {
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+
+    & + span {
+      margin-right: 1rem;
+    }
+  }
+}

@@ -2,6 +2,45 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
 }
 
-// TODO
+:root {
+  --pink: #ff57b2;
+  --gray-100: #f8f8f8;
+  --gray-400: #d7d7d7;
+  --gray-600: #bbbbbb;
+  --black-800: #1a1d23;
+}
+
+html {
+  background: var(--black-800);
+
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-100);
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,1 +1,22 @@
-// TODO
+.headerContainer {
+  width: 100%;
+  height: 8rem;
+}
+
+.headerContent {
+  width: 720px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: center;
+
+  img {
+    cursor: pointer;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
