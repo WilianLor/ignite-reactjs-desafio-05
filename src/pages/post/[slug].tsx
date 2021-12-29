@@ -1,4 +1,6 @@
 import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt-BR';
+
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { RichText } from 'prismic-dom';
 import { FiUser, FiCalendar, FiClock } from 'react-icons/fi';
@@ -47,7 +49,9 @@ export default function Post({ post }: PostProps) {
             <span>
               <FiCalendar />
               <h4>
-                {format(new Date(post.first_publication_date), 'd MMM u', {})}
+                {format(new Date(post.first_publication_date), 'd MMM u', {
+                  locale: pt,
+                })}
               </h4>
             </span>
             <span>

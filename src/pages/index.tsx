@@ -1,12 +1,13 @@
 import { GetStaticProps } from 'next';
 import { getPrismicClient } from '../services/prismic';
 import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt-BR';
+
 
 import styles from './home.module.scss';
 
 import { Post } from '../components/Post';
 import { useState } from 'react';
-import ApiSearchResponse from '@prismicio/client/types/ApiSearchResponse';
 
 interface Post {
   uid?: string;
@@ -51,7 +52,9 @@ export default function Home({ postsPagination }: HomeProps) {
             slug={post.uid}
             author={post.data.author}
             title={post.data.title}
-            date={format(new Date(post.first_publication_date), 'd MMM u')}
+            date={format(new Date(post.first_publication_date), 'd MMM u', {
+              locale: pt,
+            })}
             subtitle={post.data.subtitle}
           />
         ))}
